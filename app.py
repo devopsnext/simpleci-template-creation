@@ -24,16 +24,14 @@ def test(**result):
             ggithubURL=str(result.get('ggithubURL')),
             glibraryName=str(result.get('glibraryName')),
             gversion=str(result.get('gversion')),
-            bproject=str(result.get('bProject')),
-            bserverUrl=str(result.get('bServerUrl')),
-            busername=str(result.get('bUsername')),
-            bpassword=base64.b64encode(str(result.get('bPassword'))),
-            atype=str(result.get('atype')),
-            ausername=str(result.get('aUsername')),
+            bproject=str(result.get('bproject')),
+            bserverUrl=str(result.get('bserverUrl')),
+            busername=str(result.get('busername')),
+            bpassword=base64.b64encode(str(result.get('bpassword'))),
+            ausername=str(result.get('ausername')),
             acredentialsId=str(result.get('acredentialsId')),
             adescription=str(result.get('adescription')),
-            apath=str(result.get('apath')),
-            apassword=base64.b64encode(str(result.get('aPassword')))
+            apassword=base64.b64encode(str(result.get('apassword')))
             ))
 
 if __name__ == '__main__':
