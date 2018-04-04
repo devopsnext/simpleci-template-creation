@@ -1,7 +1,7 @@
 sharedLibrary {
    global_pipeline {
-      githubURL 	= "{{ ggithubURL }}"
-      libraryName 	= "{{ glibraryName }}"
+          githubURL 		= "{{ ggithubURL }}"
+          libraryName 		= "{{ glibraryName }}"
 	  version 		= "{{ gversion }}"
     }
 }
@@ -9,19 +9,17 @@ sharedLibrary {
 bitbucketConfig {
    bitbucket_server {
    	  project 		= "{{ bproject }}"
-	  serverUrl 	= "{{ bserverUrl }}"
+	  serverUrl 		= "{{ bserverUrl }}"
 	  username 		= "{{ busername }}"
 	  password 		= "{{ bpassword }}"
     }
 }
 
 credentials {
-   artifactory {
-	  type 			= "{{ atype }}"
+   jenkins {
+	  credentialsId 	= "{{ acredentialsId }}"
+	  description 		= "{{ adescription }}"
 	  username		= "{{ ausername }}"
-	  credentialsId = "{{ acredentialsId }}"
-	  description 	= "{{ adescription }}"
-	  path 			= "{{ apath }}"
 	  password 		= "{{ apassword }}"
 	}	
 }
