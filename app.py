@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, make_response
+from flask import Flask, render_template, request, make_response, redirect
 import base64
 import json
 import os
@@ -15,11 +15,11 @@ def result():
     newresult={}
     for k,v in result.iteritems():
         newresult[k]=v
-    test(**newresult)
-    return "SimplCi Template Generated Successfully"
+    createfile(**newresult)
+    return redirect("http://localhost:8080/")
 
-def test(**result):
-    with open('output/simpleci.conf','w') as f:
+def createfile(**result):
+    with open(os.path.join('/opt/jenkins','simpleci.conf'),'w') as f:
         f.write(render_template("simpleci.conf.template",
             ggithubURL=str(result.get('ggithubURL')),
             glibraryName=str(result.get('glibraryName')),
@@ -27,12 +27,13 @@ def test(**result):
             bproject=str(result.get('bproject')),
             bserverUrl=str(result.get('bserverUrl')),
             busername=str(result.get('busername')),
-            bpassword=base64.b64encode(str(result.get('bpassword'))),
-            ausername=str(result.get('ausername')),
-            acredentialsId=str(result.get('acredentialsId')),
-            adescription=str(result.get('adescription')),
-            apassword=base64.b64encode(str(result.get('apassword')))
+            bpassword=base64.b64encode(str(result.get('bpassword')))
+            # ausername=str(result.get('ausername')),
+            # acredentialsId=str(result.get('acredentialsId')),
+            # adescription=str(result.get('adescription')),
+            # apassword=base64.b64encode(str(result.get('apassword')))
             ))
+    return True
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8000, debug=True)

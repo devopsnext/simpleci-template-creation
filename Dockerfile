@@ -4,8 +4,8 @@ MAINTAINER Ponnusamy <agoldgod@gmail.com>
 RUN apk add --no-cache bash py2-pip \
 	&& pip2 install --upgrade pip \
 	&& pip2 install flask freeze 
-RUN mkdir -p /opt/output
-VOLUME ["/app/output"]
+RUN mkdir -p /opt/jenkins
+VOLUME ["/opt/jenkins"]
 WORKDIR /app
 ADD app.py /app/app.py 
 ADD templates /app/templates

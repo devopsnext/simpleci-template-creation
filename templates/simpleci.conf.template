@@ -14,12 +14,3 @@ bitbucketConfig {
 	  password 		= "{{ bpassword }}"
     }
 }
-
-credentials {
-   jenkins {
-	  credentialsId 	= "{{ acredentialsId }}"
-	  description 		= "{{ adescription }}"
-	  username		= "{{ ausername }}"
-	  password 		= "{{ apassword }}"
-	}	
-}
