@@ -1,4 +1,4 @@
-# simpleci-template-generation
+# simpleci-template-creation
 
 # Docker build Command
 docker build -t simpleci-template-creation:0.1 . 
