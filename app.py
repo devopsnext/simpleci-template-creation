@@ -19,7 +19,7 @@ def result():
     return redirect("http://localhost:8080/")
 
 def createfile(**result):
-    with open(os.path.join('/opt/jenkins','simpleci.conf'),'w') as f:
+    with open('output/simpleci.conf','w') as f:
         f.write(render_template("simpleci.conf.template",
             ggithubURL=str(result.get('ggithubURL')),
             glibraryName=str(result.get('glibraryName')),
