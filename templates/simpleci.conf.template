@@ -1,16 +1,15 @@
-sharedLibrary {
-   global_pipeline {
-          githubURL 		= "{{ ggithubURL }}"
-          libraryName 		= "{{ glibraryName }}"
-	  version 		= "{{ gversion }}"
-    }
-}
-
 bitbucketConfig {
    bitbucket_server {
    	  project 		= "{{ bproject }}"
-	  serverUrl 		= "{{ bserverUrl }}"
+	  serverUrl 	= "{{ bserverUrl }}"
 	  username 		= "{{ busername }}"
 	  password 		= "{{ bpassword }}"
+    }
+}
+sharedLibrary {
+   global_pipeline {
+      githubURL 	= "{{ ggithubURL }}"
+      libraryName 	= "{{ glibraryName }}"
+	  version 		= "{{ gversion }}"
     }
 }
