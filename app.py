@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, make_response, redirect
 import base64
 import json
 import os
+import socket
 
 app = Flask(__name__)
 
@@ -16,7 +17,8 @@ def result():
     for k,v in result.iteritems():
         newresult[k]=v
     createfile(**newresult)
-    return redirect("http://localhost:8080/")
+    ip=str(request.remote_addr)
+    return redirect("http://"+ip+":8080/")
 
 def createfile(**result):
     with open('output/simpleci.conf','w') as f:
